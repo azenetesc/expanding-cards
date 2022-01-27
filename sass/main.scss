@@ -1,0 +1,83 @@
+@use "assets";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$ff-header: "Libre Baskerville", serif;
+$ff-body: "Roboto", sans-serif;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  @include flex-center;
+  font-family: $ff-body;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: linear-gradient(to top left, #ffffff, #d6d6d6);
+  h1 {
+    font-family: $ff-header;
+    text-align: center;
+    color: #000;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+  }
+}
+
+.container {
+  @include flex-center;
+  width: 90vw;
+}
+
+.panel {
+  color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  height: 80vh;
+  flex: 0.5;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.8);
+
+  h3 {
+    font-size: 1.5rem; /*  24px */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  &.active {
+    flex: 5;
+
+    & h3 {
+      opacity: 1;
+      transition: opacity 0.3s ease-in 0.6s;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}

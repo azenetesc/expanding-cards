@@ -1,0 +1,96 @@
+.card1 {
+  background-image: url("https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=770&q=80");
+}
+
+.card2 {
+  background-image: url("https://images.unsplash.com/photo-1615414047026-802692414b79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+}
+
+.card3 {
+  background-image: url("https://images.unsplash.com/photo-1597953066321-9bf0e32348fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHRoZWF0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60");
+}
+
+.card4 {
+  background-image: url("https://images.unsplash.com/photo-1580809361436-42a7ec204889?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHRoZWF0ZXIlMjBsb25kb258ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60");
+}
+
+.card5 {
+  background-image: url("https://images.unsplash.com/photo-1532089006065-de61ca171e56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: linear-gradient(to top left, #ffffff, #d6d6d6);
+}
+body h1 {
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  color: #000;
+  letter-spacing: 5px;
+  text-transform: capitalize;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+.panel {
+  color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  height: 80vh;
+  flex: 0.5;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.8);
+}
+.panel h3 {
+  font-size: 1.5rem;
+  /*  24px */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.6s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+.panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
